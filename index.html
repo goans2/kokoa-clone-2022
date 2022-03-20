@@ -1,41 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- css를 추가하는 단축키가 있다.
+        link:css라고 치면 딱 위처럼 문장이 저절로 쓰여지고, 여기서 style.css는 css폴더에 있으니
+      폴더위치만 지정해 주면 된다. (style.css-> css/style.css)-->
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Welcome to Kokoa Talk</title>
   </head>
   <body>
-    <div id="status-bar">
-      <div class="status-bar__column"></div>
-      <span>No Service</span>
-      <i class="fa-solid fa-wifi"></i>
+    <div class="status-bar">
+      <div class="status-bar__column">
+        <span>No Service</span>
+        <i class="fa-solid fa-wifi"></i>
+      </div>
 
       <!-- To Do: Wifi Icon-->
-      <div class="status-bar__column"></div>
-      <!--여기서는 BEM(Class 이름 정하는 방법(block__element--modifier),id는 사용하지 않음)을 적용한다
+      <div class="status-bar__column">
+        <!--여기서는 BEM(Class 이름 정하는 방법(block__element--modifier),id는 사용하지 않음)을 적용한다
             BEM은 class 이름을 큰 block__그 안의 종속되는 block--적용할 스타일 이렇게 작성한다. 
             BEM을 통해 class 이름을 적용하면 class의 구조 파악이 쉽다. 다만 적용시 class 이름이 너무 길어질 수 있다.-->
-      <span>18:43</span>
-      <div class="status-bar__column"></div>
-      <span>11%</span>
-      <i class="fa-solid fa-battery-full"></i>
-      <!--Battery Icon-->
-      <!--Lightning Icon-->
-      <i class="fa-solid fa-bolt"></i>
+        <span>18:43</span>
+      </div>
+      <div class="status-bar__column">
+        <span>11%</span>
+        <i class="fa-solid fa-battery-full fa-lg"></i>
+        <!--Battery Icon-->
+        <!--위의 베터리 아이콘은 fontawesome에서 가지고 온건데 크기를 조정하고 싶으면 class명 맨 뒤의 명칭을 바꿔주면 된다.
+        아무것도 없으면 기본 사이즈이고, 여기서는 fa-lg를 줘서 라지 사이즈로 바꿨다. 수치로 표현하고 싶으면,
+        fa-2x ,fa-5x 이렇게 2배 5배 적용시킬 수 있다. -->
+        <!--Lightning Icon-->
+        <i class="fa-solid fa-bolt"></i>
+      </div>
     </div>
-    <script
-      src="https://kit.fontawesome.com/3e5471f39e.js"
-      crossorigin="anonymous"
-    ></script>
-    <!-- 아이콘을 추가하는 방법은 
-    1. 직접 이미지아이콘 추가하기
-    2. 이미지사이트에서 가져오기(heroicons, fontawesome)가 있음
-    이 중, fontawesome에 가면 많은 아이콘들이 있어서 그냥 복사해서 가져오면 되는데,
-    주의할 점은 맨 밑에 스크립트 문장을 꼭!! body 맨 밑에 넣어줘야 한다는 점이다. 
-    이렇게 스크립트 문장을 붙여넣고, 원하는 아이콘의 코드(신기하게 코드만으로 아이콘을 만들 수 있다. 이걸 SVG라고 한다)를
-    원하는 칸에 붙여 넣으면 된다.-->
     <header class="welcome-header">
       <h1 class="welcome-header__title">Welcom to Kokoa Clone</h1>
       <p class="welcome-header__text">
@@ -49,5 +48,16 @@
       <input type="submit" value="Sign up" />
       <a hrer="#">Find Kokoa Account or Password</a>
     </form>
+    <script
+      src="https://kit.fontawesome.com/3e5471f39e.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- 아이콘을 추가하는 방법은 
+    1. 직접 이미지아이콘 추가하기
+    2. 이미지사이트에서 가져오기(heroicons, fontawesome)가 있음
+    이 중, fontawesome에 가면 많은 아이콘들이 있어서 그냥 복사해서 가져오면 되는데,
+    주의할 점은 맨 밑에 스크립트 문장을 꼭!! body 맨 밑에 넣어줘야 한다는 점이다. 
+    이렇게 스크립트 문장을 붙여넣고, 원하는 아이콘의 코드(신기하게 코드만으로 아이콘을 만들 수 있다. 이걸 SVG라고 한다)를
+    원하는 칸에 붙여 넣으면 된다.-->
   </body>
 </html>

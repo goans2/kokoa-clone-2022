@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,600;1,400&display=swap');
+
+body{
+    font-family: font-family: 'Open Sans', sans-serif;
+}
+/* font-family(전체 페이지에 적용할 font를 지정하는 것) 추가 방법(1) 
+1. font google 가서 원하는 폰트 선택하고 @import로 선택 후 문장을 복사해서 위 문장처럼 맨 위에 붙여 넣는다. 
+2. 그리고 밑에 css 코드도 사이트에 있으니 붙여 넣으면 적용된다. 
+/* 
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+} */
+
+/* font-family 추가 방법 (2) 
+1. body tag에다가 font-family 속성(property)를 주면 되는데 값(value)은 vsc에서 추천하는 리스트가 막 뜬다.  
+2. 그중에서 원하는 스타일 쓰면 되는데, -apple-system이 깔끔하다.
+*/
+
+.status-bar {
+  display: flex;
+  justify-content: space-between;
+}
+.status-bar__column:first-child span {
+  margin-right: 5px;
+}
+
+.status-bar__column{
+    width: 33%;
+}
+
+.status-bar__column:nth-child(2){
+    display: flex;
+    justify-content: center;
+}
+
+.status-bar__column:last-child{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.status-bar__column .fa-battery-full{
+    margin: 0px 5px;
+}
