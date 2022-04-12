@@ -127,3 +127,11 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+
+input:focus {
+  outline: none;
+}
+
+/* 여기는 공통규칙이 있는 css다. 모든 html에 공통으로 적용되는 규칙을 넣어주고 여기서 관리하면 편하다.
+추가한 규칙은 모든 input이 focus상태일때 outline이 none으로 해놓는다 이다.
+*/

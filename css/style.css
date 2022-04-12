@@ -6,6 +6,9 @@ reset.css라는 css파일을 만들고 내용을 넣은 뒤, import 로 불러�
 @import "status-bar.css";
 /* css파일을 목적에 맞게 그 부분만 만든 후 이렇게 import로 불러들이는 방법이 좋다.
 너무 많은 내용을 한 css에 넣으면 보기 힘들다. */
+@import "variables.css";
+/* 자주 쓰거나 나만의 속성을 쓰고 싶을 때, 파이썬마냥 변수 설정해 놓으면 편하다. 
+이 때는 변수로 쓰일 스타일들을 따로 variables.css에 입력해 놓고 해당파일을 import해서 불러왔다.*/
 
 
 body{
@@ -48,3 +51,32 @@ body {
   opacity: 0.6;
 
 }
+
+#login-form {
+  display: flex;
+  flex-direction: column;
+  margin: 0px 40px;
+}
+
+#login-form input{
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  padding:15px 0px;
+  font-size:18px;
+  margin-bottom: 25px;
+  transition: border-color 0.3s ease-in-out;
+}
+
+#login-form input ::placeholder{
+  color:rgba(0, 0, 0, 0.4);
+}
+/* 
+여기는 각각의 항목에 대한 구체적인 style을 적용하는 파일인데, 만약 모든 html에서 공통되게 적용시키고 싶은 규칙이 있다면,
+하나의 공통규칙css에 넣어서 관리하는게 좋다. 
+여기서는 reset.css에 공통 규칙을 넣었다.  */
+
+#login-form input:focus{
+  border-color:var(--yellow);
+}
+/*위에서 variables.css를 import 했고, 거기서 변수들을 설정해 놓았다. 설정한 변수를 사용하여 css를 작성했다.
+변수 쓰는 방법은 var(변수이름) (여기서는 --yellow) (변수 이름은 --땡땡 형식으로 써야함)*/
