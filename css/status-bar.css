@@ -1,0 +1,38 @@
+.status-bar {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+}
+.status-bar__column:first-child span {
+  margin-right: 5px 3px;
+}
+
+.status-bar__column {
+  width: 33%;
+}
+
+.status-bar__column:nth-child(2) {
+  display: flex;
+  justify-content: center;
+}
+
+.status-bar__column:last-child {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+/* black을 정확히 화면 정 중앙에 위치시키는 방법 (css hack)
+  flex에서 justify-content속성에서 값을 space-between을 주면 black들을 같은 비율로 
+  처음부터 끝까지 정렬시킨다. 
+  그러나 black들의 크기가 모두 제각각이라 이렇게 하면 중간에 있는 block이 정확히 정 중앙에 오지 않는다.
+  
+  그래서 이 때 쓰는 방법이 있다.
+  1. 전체 block의 width를 33%로 맞춘다. 여기서 33%으로 맞춘거는 대상 block이 3개라서 그런거다.
+  2. 그 다음 각 block에게 flex속성을 주고 중간에 있는 block에는 justify-content속성에 center를 준다.
+  3. 마지막 block에도 flex 속성을 주고, justify-content에는 flex-end를 주고, 혹시 수직 정렬이 맞지 않으면,
+  align-items 속성에 값을 center로 주면 된다. 
+  */
+
+.status-bar__column .fa-battery-full {
+  margin: 0px 5px;
+}

@@ -1,4 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,600;1,400&display=swap');
+@import "reset.css";
+/* 기본 브라우저가 가지고 있는 margin 값등을 0으로 만드는 css 추가 
+reset.css라는 css파일을 만들고 내용을 넣은 뒤, import 로 불러들였다.  
+이렇게 하는 이유는 모든게 0인 상태에서 작업하는게 편하니깐  */
+@import "status-bar.css";
+/* css파일을 목적에 맞게 그 부분만 만든 후 이렇게 import로 불러들이는 방법이 좋다.
+너무 많은 내용을 한 css에 넣으면 보기 힘들다. */
+
 
 body{
     font-family: font-family: 'Open Sans', sans-serif;
@@ -18,29 +26,25 @@ body {
 2. 그중에서 원하는 스타일 쓰면 되는데, -apple-system이 깔끔하다.
 */
 
-.status-bar {
+.welcome-header{
+  margin:90px 0px;
+  text-align: center;
   display: flex;
-  justify-content: space-between;
-}
-.status-bar__column:first-child span {
-  margin-right: 5px;
+  flex-direction: column;
+  align-items: center;
 }
 
-.status-bar__column{
-    width: 33%;
+.welcome-header__title{
+  margin-bottom: 20px;
+  font-size: 25px;
+  font-weight: 400;
 }
+/* 위에서 font는 googleapis에서 코드 따서 import 해놨다. open sans 뭐시기 저시기. 
+위에 보면 거기 폰트가 weight를 0~600까지 줄 수 있다고 써있다. 그래서 나는 400정도 굵기를 줬다. */
 
-.status-bar__column:nth-child(2){
-    display: flex;
-    justify-content: center;
-}
 
-.status-bar__column:last-child{
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-}
+.welcome-header__text{
+  width: 60%;
+  opacity: 0.6;
 
-.status-bar__column .fa-battery-full{
-    margin: 0px 5px;
 }
