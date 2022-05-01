@@ -20,3 +20,16 @@
 .friend-screen {
   padding: 0px var(--horizontal-space);
 }
+
+.friend-screen__channel {
+  margin-top: 25px;
+  margin-bottom: 30px;
+  padding-top: 15px;
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.friend-screen__channel--header span {
+  display: flex;
+  justify-content: space-between;
+  color: rgba(0, 0, 0, 0.5);
+}
