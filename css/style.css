@@ -20,17 +20,21 @@ reset.css라는 css파일을 만들고 내용을 넣은 뒤, import 로 불러�
 너무 많은 내용을 한 css에 넣으면 보기 힘들다. */
 @import "components/nav-bar.css";
 @import "components/screen-header.css";
+@import "components/user-component.css";
 
 
 @import "screens/login.css";
+@import "screens/friends.css";
 
 
 
 
 
 body{
+    color: #2e363e;
     font-family: font-family: 'Open Sans', sans-serif;
 }
+
 /* font-family(전체 페이지에 적용할 font를 지정하는 것) 추가 방법(1) 
 1. font google 가서 원하는 폰트 선택하고 @import로 선택 후 문장을 복사해서 위 문장처럼 맨 위에 붙여 넣는다. 
 2. 그리고 밑에 css 코드도 사이트에 있으니 붙여 넣으면 적용된다. 
@@ -45,4 +49,7 @@ body {
 1. body tag에다가 font-family 속성(property)를 주면 되는데 값(value)은 vsc에서 추천하는 리스트가 막 뜬다.  
 2. 그중에서 원하는 스타일 쓰면 되는데, -apple-system이 깔끔하다.
 */
+
+   
+
 
