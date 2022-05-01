@@ -135,3 +135,13 @@ input:focus {
 /* 여기는 공통규칙이 있는 css다. 모든 html에 공통으로 적용되는 규칙을 넣어주고 여기서 관리하면 편하다.
 추가한 규칙은 모든 input이 focus상태일때 outline이 none으로 해놓는다 이다.
 */
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* inherit는 부모 tag의 값을 불러 온다는 의미이다. a의 경우 하이퍼링크이기 때문에, 기본값이 blue이다. 
+그래서 그거 보기 싫어서 color를 inherit로 지정한거다 
+그리고 하이퍼링크는 밑줄이 그어져 있는데 그거도 보기 싫어서 text-decoration을 none으로 한거다.
+*/

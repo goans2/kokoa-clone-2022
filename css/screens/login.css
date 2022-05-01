@@ -1,0 +1,52 @@
+#login-form {
+  display: flex;
+  flex-direction: column;
+  margin: 0px 40px;
+}
+
+#login-form input {
+  border: none;
+  padding: 15px 0px;
+  font-size: 18px;
+  margin-bottom: 25px;
+}
+
+#login-form input:not([type="submit"]) {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  transition: border-color 0.3s ease-in-out;
+}
+
+/* 셀렉터 중  not이라는 속성이 있다. 이거는 해당하는 속성이 없을 때만 수행되는 조건을 설정할 때 쓰이낟.
+여기서는 submit이라는 type이 없는 항목에만 해당 조건이 발현되도록 설정했다. 
+그래서 여기서는 submit type인 버튼에는 적용을 배제 했다. */
+
+#login-form input ::placeholder {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+/* 
+여기는 각각의 항목에 대한 구체적인 style을 적용하는 파일인데, 만약 모든 html에서 공통되게 적용시키고 싶은 규칙이 있다면,
+하나의 공통규칙css에 넣어서 관리하는게 좋다. 
+여기서는 reset.css에 공통 규칙을 넣었다.  */
+
+#login-form input:focus {
+  border-color: var(--yellow);
+}
+/*위에서 variables.css를 import 했고, 거기서 변수들을 설정해 놓았다. 설정한 변수를 사용하여 css를 작성했다.
+변수 쓰는 방법은 var(변수이름) (여기서는 --yellow) (변수 이름은 --땡땡 형식으로 써야함)*/
+
+#login-form input[type="submit"] {
+  background-color: var(--yellow);
+  cursor: pointer;
+  font-size: 17px;
+  border-radius: 5px;
+}
+/* cursor 속성은 말 그대로 마우스 커서 아이콘을 설정할 수 있다. 여기서는 일반적인 pointer로 했고, 
+none으로 하면 커서가 그냥 화살표로 표시되고, progress로 하면 뱅글뱅글 돌아가는 커서가 된다.  */
+
+#login-form a {
+  text-align: center;
+  text-decoration: none;
+  font-size: 13px;
+  color: inherit;
+}

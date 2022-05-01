@@ -1,0 +1,74 @@
+.nav {
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  background-color: #f9f9fa;
+  padding: 20px 50px;
+  border-top: 1px solid rgba(121, 121, 121, 0.3);
+  box-sizing: border-box;
+}
+
+/* nav bar를 고정시키기 위해 position속성의 값을 fixed로 줬다. 
+그리고 밑에다 고정시키기 위해 bottom 값을 0으로 줬다.
+
+그런데 이렇게 하면 flex로 해놓은 icon간의 간격이 다 박살나버린다. 왼쪽에데가 다 고정시키는게 디폴트 같다. 
+그래서 width를 100% 주면 넓이가 기존과 같아지는데,
+이 경우, 맨 오른쪽의 아이콘이 사라져 버린다. 
+
+이유는 padding이 50px 들어가 있기 때문이다. 
+css는 widht를 content 즉, padding 안에 있는 값을 기준으로 한다. 그래서 
+width를 100%를 주고 padding도 50px을 주면 총 해당 tag의 width는 100%+50px이 되고, 
+이게 크면 오른쪽 아이콘이 화면 밖으로 넘어가서 보이지기 않는 것이다. 
+
+이러한 문제를 해결하기 위해, box-sizing 속성의 값을 border-box로 주면,
+css가 witdh를 전체 width로 인식해서 margin + border + padding + content width가 width 속성 값이 된다. 
+
+즉, 아무리 padding이나 margin을 줘도 width는 width인거고, margin이나 padding값 만큼 content값이 줄어들거다.
+*/
+
+.nav__list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav__link {
+  color: #2e363e;
+  position: relative;
+}
+
+.nav__notification {
+  background-color: tomato;
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  position: absolute;
+  left: 15px;
+  bottom: 15px;
+}
+/* 위의 nav__notification 에 flex를 줬는데, 원래 flex는 부모요소에다가 만들어줘야한다. 근데 저기는 부모요소가 아니라
+자식요소인데 저기다 flex를 썻고 작동한다. 
+이는 span이라는 속성이 부모이고, 그 값인 1이 자식이라는 개념으로 적용된 것이다.*/
+
+/* 위에서 position: absolute를 썼는데, 이는 주변에서 미세하게 조정하기 위해서 쓰는거다. 다만 단독으로 absolute를 쓰면
+기준이 전체 body로 적용되서 엉뚱한 곳에 적용되므로, 상위 부모  tag에다가 position : relative를 입력해 놓아야 적용된다.
+이는 position: absolute는 가장 가까운 relative를 가진 부모 기준으로 움직이기 때문이다.
+*/
+
+.nav__alarm {
+  background-color: tomato;
+  width: 6px;
+  height: 6px;
+  color: tomato;
+  font-size: 0.001px;
+  border-radius: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 30px;
+}

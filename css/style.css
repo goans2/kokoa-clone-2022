@@ -1,14 +1,26 @@
+/* 아래 import 순서는 이렇게 밑에처럼 해야 한다. css니깐 위에서 아래로 코드가 적용되는데,
+보편적인 값을 맨 아래에다 두면(ex: font, reset 등등), 위의 css 파일엔 적용이 되지 않는다
+그래서 보편적인 것들 font, reset, variables 들은 위에 두고, 
+그 다음 공용으로 쓰이는 css들(여기서는 status-bar 같은거)를 그 다음에 두고 
+그 다음 맨 마지막에는 매 page 마다 css 값이 다를테니 각페이지의 css를 배치하면 된다. */
+
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,600;1,400&display=swap');
+
 @import "reset.css";
 /* 기본 브라우저가 가지고 있는 margin 값등을 0으로 만드는 css 추가 
 reset.css라는 css파일을 만들고 내용을 넣은 뒤, import 로 불러들였다.  
 이렇게 하는 이유는 모든게 0인 상태에서 작업하는게 편하니깐  */
-@import "status-bar.css";
-/* css파일을 목적에 맞게 그 부분만 만든 후 이렇게 import로 불러들이는 방법이 좋다.
-너무 많은 내용을 한 css에 넣으면 보기 힘들다. */
 @import "variables.css";
 /* 자주 쓰거나 나만의 속성을 쓰고 싶을 때, 파이썬마냥 변수 설정해 놓으면 편하다. 
 이 때는 변수로 쓰일 스타일들을 따로 variables.css에 입력해 놓고 해당파일을 import해서 불러왔다.*/
+
+@import "components/status-bar.css";
+/* css파일을 목적에 맞게 그 부분만 만든 후 이렇게 import로 불러들이는 방법이 좋다.
+너무 많은 내용을 한 css에 넣으면 보기 힘들다. */
+@import "components/nav-bar.css";
+
+@import "screens/login.css";
+
 
 
 body{
@@ -60,16 +72,24 @@ body {
 
 #login-form input{
   border: none;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
   padding:15px 0px;
   font-size:18px;
   margin-bottom: 25px;
+}
+
+#login-form input:not([type="submit"]){
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
   transition: border-color 0.3s ease-in-out;
 }
+
+/* 셀렉터 중  not이라는 속성이 있다. 이거는 해당하는 속성이 없을 때만 수행되는 조건을 설정할 때 쓰이낟.
+여기서는 submit이라는 type이 없는 항목에만 해당 조건이 발현되도록 설정했다. 
+그래서 여기서는 submit type인 버튼에는 적용을 배제 했다. */
 
 #login-form input ::placeholder{
   color:rgba(0, 0, 0, 0.4);
 }
+
 /* 
 여기는 각각의 항목에 대한 구체적인 style을 적용하는 파일인데, 만약 모든 html에서 공통되게 적용시키고 싶은 규칙이 있다면,
 하나의 공통규칙css에 넣어서 관리하는게 좋다. 
@@ -80,3 +100,19 @@ body {
 }
 /*위에서 variables.css를 import 했고, 거기서 변수들을 설정해 놓았다. 설정한 변수를 사용하여 css를 작성했다.
 변수 쓰는 방법은 var(변수이름) (여기서는 --yellow) (변수 이름은 --땡땡 형식으로 써야함)*/
+
+#login-form input[type="submit"]{
+  background-color: var(--yellow);
+  cursor: pointer;
+  font-size: 17px;
+  border-radius: 5px;
+}
+/* cursor 속성은 말 그대로 마우스 커서 아이콘을 설정할 수 있다. 여기서는 일반적인 pointer로 했고, 
+none으로 하면 커서가 그냥 화살표로 표시되고, progress로 하면 뱅글뱅글 돌아가는 커서가 된다.  */
+
+#login-form a{
+  text-align: center;
+  text-decoration: none;
+  font-size:13px;
+  color:inherit;
+}
