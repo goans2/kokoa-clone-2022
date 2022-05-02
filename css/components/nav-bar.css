@@ -37,15 +37,6 @@ css가 witdh를 전체 width로 인식해서 margin + border + padding + content
 }
 
 .nav__notification {
-  background-color: tomato;
-  width: 30px;
-  height: 30px;
-  border-radius: 15px;
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-weight: 600;
   position: absolute;
   left: 15px;
   bottom: 15px;

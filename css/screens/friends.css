@@ -5,6 +5,7 @@
   padding: 15px 0px;
   font-size: 16px;
   margin-bottom: 10px;
+  margin-top: -15px;
 }
 
 /* 하나만 block으로 바꾸고 싶다면, 굳이 flex 주지 않고 block을 주면 된다. */

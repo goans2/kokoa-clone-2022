@@ -79,7 +79,13 @@
           </div>
         </div>
         <div class="user-component__column">
-          <span>2<i class="fa-solid fa-chevron-right fa-xs"></i></span>
+          <div>
+            <span>2</span>
+            <i class="fa-solid fa-chevron-right fa-xs"></i>
+          </div>
+          <!-- 만약 부모 tag에 flex를 지정했는데 자식 tag에 영향을 주고 싶지 않다면, 부모 자식 간의 관계를 끊어 놓으면 된다.
+          여기서는 부모 tag(div class="user-component__column") 밑에 div tag를 만들고 그 밑에 원래 자식 놈들 (span ,i 이놈들)을 넣어서
+          부모 자식이 아닌 부모 자식 손자 관계로 만들어 버리면 flex를 끊을 수 있다-->
         </div>
       </div>
     </main>
@@ -93,7 +99,7 @@
         </li>
         <li class="nav__btn">
           <a class="nav__link" href="chats.html">
-            <span class="nav__notification">1</span>
+            <span class="nav__notification badge">1</span>
             <i class="fa-regular fa-comment fa-2x"></i>
           </a>
         </li>
