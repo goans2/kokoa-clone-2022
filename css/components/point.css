@@ -1,0 +1,18 @@
+.point {
+  background-color: tomato;
+  width: 6px;
+  height: 6px;
+  color: tomato;
+  font-size: 0.001px;
+  border-radius: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+}
+
+.point__relative {
+  position: relative;
+}
