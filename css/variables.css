@@ -5,6 +5,8 @@
 :root {
   --yellow: #fae100;
   --horizontal-space: 25px;
+  --main-border: 1px solid rgba(0, 0, 0, 0.2);
+  --gray: rgba(0, 0, 0, 0.5);
 }
 
 /* 변수 만드는 방법은 우선 :root 에다가 변수 이름(위에서는 --yellow) 그리고 변수의 속성( 위에서는 컬러를 지정)을 지정하면 된다.*/

@@ -22,13 +22,12 @@ reset.css라는 css파일을 만들고 내용을 넣은 뒤, import 로 불러�
 @import "components/screen-header.css";
 @import "components/user-component.css";
 @import "components/badge.css";
-@import "components/find.css";
 @import "components/point.css";
 
 
 @import "screens/login.css";
 @import "screens/friends.css";
-
+@import "screens/find.css";
 
 
 
