@@ -1,0 +1,24 @@
+.icon-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.icon-row__icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 25%;
+  padding: 10px;
+}
+
+.icon-row__icon i {
+  font-size: 35px;
+}
+
+/* 아이콘(i)은 font-size 로도 크기를 조절할 수 있다.*/
+
+.icon-row__icon span {
+  margin-top: 15px;
+  text-align: center;
+}
