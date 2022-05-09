@@ -14,6 +14,7 @@
 
 .more-suggestions__icons {
   display: flex;
+  justify-content: space-between;
 }
 
 .more-suggestions__icon {
@@ -21,6 +22,10 @@
   flex-direction: column;
   align-items: center;
   width: 25%;
+}
+
+.more-suggestions_icon-image {
+  margin-bottom: 10px;
 }
 
 .more-suggestions_icon-text {
