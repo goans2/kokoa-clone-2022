@@ -1,7 +1,25 @@
 #chat-screen {
   background-color: #abc1d1;
+  height: 11000vh;
 }
 
-.alt-header__column span:last-child {
-  margin-left: 10px;
+#chat-screen .alt-header {
+  background-color: #abc1d1;
+  top: 0;
+  position: fixed;
+}
+/* position을 fixed로 해놓고 top 값을 0을 주면 맨 위로 붙는다. 이 때 붙는 값은 당연히 margin과 padding을 포함한 넓이이다.*/
+
+#chat-screen .status-bar {
+  z-index: 2;
+}
+
+/* 위에 status-bar와 alt-header 모두 fixed인데 자연스럽게 겹치게 하고 싶다. 
+이 때 우선 alt-header에 background-color를 주면, alt-header와 status-bar 겹치는 공간에 alt-header가 먼저 나오게 된다.
+그래서 position fixed인 값들의 순서를 정하기 위해 z-index를 사용하며, z-index 숫자가 높은 class가 먼저 나온다.
+위에선, status-bar에 z-index를 2를 줘서 (원래 z-index 값 디폴트는 0이다) status-bar가 먼저 나오게 하고,
+자연스럽게 그 뒤에 alt-header가 뒤에 나오게 된다. */
+
+.main-chat {
+  margin-top: 120px;
 }
