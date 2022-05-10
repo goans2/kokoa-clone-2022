@@ -30,6 +30,7 @@ reset.css라는 css파일을 만들고 내용을 넣은 뒤, import 로 불러�
 @import "screens/find.css";
 @import "screens/more.css";
 @import "screens/settings.css";
+@import "screens/chat.css";
 
 body {
   color: #2e363e;

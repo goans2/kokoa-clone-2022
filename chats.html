@@ -36,25 +36,27 @@
     <!-- 보통 class이름으로 그룹핑을 하는 방식을 취하지만 이 내용은 오직 여기서만 쓰이기 때문에 
     id로 표시함-->
     <main class="main-screen">
-      <div class="user-component">
-        <div class="user-component__column">
-          <img src="images/red_panda.jpg" class="user-component__avatar" />
-          <!-- 위처럼 class를 두개 적용해서 첫번째는 보통버전, 두번째는 큰버전으로 지정하고, 
+      <a href="chat.html">
+        <div class="user-component">
+          <div class="user-component__column">
+            <img src="images/red_panda.jpg" class="user-component__avatar" />
+            <!-- 위처럼 class를 두개 적용해서 첫번째는 보통버전, 두번째는 큰버전으로 지정하고, 
           css특성이 맨마지막 문장이 적용되니 큰버전을 보통버전보다 밑에 작성하면 보통버전이 먼저 적용 후,
         큰버전에서 지정한 조건만 적용된다.-->
 
-          <div class="user-component__text">
-            <h4 class="user-component__title">Haemun</h4>
-            <h6 class="user-component__subtitle">
-              Please check My Kokoa Account info
-            </h6>
+            <div class="user-component__text">
+              <h4 class="user-component__title">Haemun</h4>
+              <h6 class="user-component__subtitle">
+                Please check My Kokoa Account info
+              </h6>
+            </div>
+          </div>
+          <div class="user-component__column">
+            <span class="user-component__time">21:22</span>
+            <div class="badge">1</div>
           </div>
         </div>
-        <div class="user-component__column">
-          <span class="user-component__time">21:22</span>
-          <div class="badge">1</div>
-        </div>
-      </div>
+      </a>
     </main>
 
     <nav class="nav">
