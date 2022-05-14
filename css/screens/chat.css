@@ -39,6 +39,7 @@
 .message-row {
   width: 100%;
   display: flex;
+  margin-bottom: 25px;
 }
 
 .message-row img {
@@ -57,7 +58,7 @@
   background-color: white;
   padding: 13px;
   font-size: 18px;
-  border-radius: 25%;
+  border-radius: 15px;
   border-top-left-radius: 0px;
   margin-right: 5px;
 }
@@ -71,3 +72,37 @@
   opacity: 0.8;
   font-size: 14px;
 }
+
+.message-row--own {
+  justify-content: flex-end;
+}
+
+.message-row--own .message__bubble {
+  background-color: var(--yellow);
+  border-top-left-radius: 15px;
+  border-top-right-radius: 0px;
+  margin-left: 5px;
+  margin-right: 0px;
+}
+
+/* .message-row--own .message__bubble {
+  margin-left: 5px;
+  order: 1;
+} */
+
+/* flex 자식들 순서 바꾸기 1 
+
+flex의 children들은 order라는 속성을 사용할 수 있다. 말 그대로 자식들의 순서를 정할 수 있는데, 
+디폴트 값은 0이고, 만약 한 자식에게 0을 초과하는 값의 order를 주면 그 자식은 순서가 밀린다. 
+위에서는 message__bubble의 순서를 1로 해서 자식 순서가 뒤로 밀렸고, 
+현재 왼->오 정렬이기 때문에 오른쪽으로 순서가 밀렸다.*/
+
+.message-row--own .message__info {
+  flex-direction: row-reverse;
+}
+
+/*flex 자식들 순서 바꾸기 2
+
+두번째로는 flex-direction을 row-reverse로 하면 된다. 이게 더 깔끔하다. 
+row-reverse는 말 그대로 row 순서를 역으로 하는 방향이다 라는 뜻이다.
+즉, 왼->오에서 오->왼 으로 순서를 정한다 라는 뜻이다*/
