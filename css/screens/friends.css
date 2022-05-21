@@ -35,6 +35,20 @@
   color: rgba(0, 0, 0, 0.5);
 }
 
+@keyframes HideSplashScreen {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+/* opacity를 0으로 주었으나 이건 말 그대로 투명도를 0으로 할 뿐, 실제 html 값들을 제거한 건 아니다. 
+그래서 이렇게 에니매이션이 끝나도 밑에 div - #splash-screen는 계속 그자리에 있어 화면 클릭이 되지 않는다.
+이럴때는 js를 쓰거나 아니면 css로 해결하기 위해서는 visibility 속성을 hidden으로 주면 아예 css가 해당 div를 무시해 버린다.
+이렇게 되면 div를 무시해 버리니 클릭도 되고 다 된다. 다만 그래도 div는 그자리에 있다. html을 지운 것이 아니니깐*/
+
 #splash-screen {
   background-color: var(--yellow);
   position: absolute;
@@ -45,4 +59,8 @@
   justify-content: center;
   align-items: center;
   font-size: 132px;
+  animation: HideSplashScreen 0.4s ease-in-out forwards;
+  animation-delay: 1s;
 }
+/* animation에서 마지막 속성을 끝까지 유지시키고 싶을 때는 (위에서는 to값을 에니메이션 끝나도 유지시키고 싶을 때) 
+animation 속성에 forwards 속성을 추가하면 된다 */
