@@ -52,6 +52,32 @@
   font-size: 15px;
 }
 
+.open-post__heart-count span {
+  margin-left: 3px;
+}
+
+@keyframes heartBeat {
+  0% {
+    color: white;
+    transform: none;
+  }
+  50% {
+    color: tomato;
+    transform: scale(1.5);
+  }
+  100% {
+    color: white;
+  }
+}
+
+.open-post__heart-count:hover i {
+  will-change: transform;
+  animation: heartBeat 1s linear infinite;
+}
+
+/* will-change 속성은 애니메이션 적용 시 끊길 경우, 브라우저에게 사용할 애니메이션 속성을 지정하면
+부드럽게 변한다. 이는 브라우저에 해당 애니메이션을 지정하고 이를 그래픽카드를 사용하여 적용하는 원리이다.*/
+
 .open-post__title {
   font-weight: 600;
   margin-bottom: 7px;
