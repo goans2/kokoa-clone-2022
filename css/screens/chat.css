@@ -132,6 +132,9 @@ row-reverse는 말 그대로 row 순서를 역으로 하는 방향이다 라는 
   align-items: center;
   transition: all 0.3s ease-in-out;
 }
+/* 위에 reply에 transition 속성을 줬다. 사실 이거만 보면 아무런 애니메이션 효과가 없어서 이걸 왜 주나 싶지만
+이렇게 부모 class에 transition 속성을 지정해 주면 앞으로 나올 자식 class나 selector를 이용한 속성에 해당 transition 속성이 
+따라간다. 즉, 부모 수준에서 transition이 어떻게 발생해야 하는지 지정해 줬다고 보면 된다.*/
 
 .reply .reply__column:first-child {
   width: 10%;

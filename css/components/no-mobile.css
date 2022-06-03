@@ -1,0 +1,24 @@
+#no-mobile {
+  position: absolute;
+  z-index: 99;
+  background-color: var(--yellow);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  top: 0;
+  justify-content: center;
+  align-items: center;
+  font-size: 32px;
+}
+
+/* 위의 코드는 화면이 커지면 kokoatalk을 지원하지 않기 위해 만든 코드이며, 
+position을 absoulte를 주고, z-index를 엄청 큰 값을 줘서 무조건 해당 화면이 맨 앞에 나오도록 하였다.
+그리고 top을 0을 줘서 위의 공백 없이 전체 화면이 다 보이도록 하였다 */
+
+@media screen and (max-width: 600px) {
+  #no-mobile {
+    display: none;
+  }
+}
+
+/* media query를 이용해 넓이가 600px을 초과하면 display가 보이지 않도록 했다*/
