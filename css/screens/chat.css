@@ -1,6 +1,6 @@
 #chat-screen {
   background-color: #abc1d1;
-  height: 11000vh;
+  height: 500vh;
 }
 
 #chat-screen .alt-header {
@@ -21,11 +21,23 @@
 위에선, status-bar에 z-index를 2를 줘서 (원래 z-index 값 디폴트는 0이다) status-bar가 먼저 나오게 하고,
 자연스럽게 그 뒤에 alt-header가 뒤에 나오게 된다. */
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
 .main-chat {
-  margin-top: 120px;
+  margin-top: 170px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  animation: fadeIn 0.3s linear;
 }
 
 .chat__timestamp {
@@ -118,6 +130,7 @@ row-reverse는 말 그대로 row 순서를 역으로 하는 방향이다 라는 
   justify-content: space-between;
   box-sizing: border-box;
   align-items: center;
+  transition: all 0.3s ease-in-out;
 }
 
 .reply .reply__column:first-child {
@@ -135,6 +148,7 @@ row-reverse는 말 그대로 row 순서를 역으로 하는 방향이다 라는 
   border: var(--main-border);
   border-radius: 25px;
   box-sizing: border-box;
+  transition: all 0.3s ease-in-out;
 }
 
 .reply__column:last-child > i,
@@ -168,4 +182,28 @@ row-reverse는 말 그대로 row 순서를 역으로 하는 방향이다 라는 
 .reply__column button:focus,
 .reply__column button:active {
   outline: none;
+}
+
+.reply .reply__column:first-child,
+.reply .fa-face-smile,
+.reply button {
+  transition: opacity 0.3s ease-in-out;
+}
+
+.reply:focus-within .reply__column:first-child,
+.reply:focus-within .fa-face-smile,
+.reply:focus-within button {
+  opacity: 0;
+}
+
+.reply:focus-within input {
+  width: 98vw;
+  transform: translateX(-14%) translateY(-80px);
+}
+
+/* focus-within속성은 내부에 어떤 element가 focus되어 있으면 발동하는 속성이다.
+여기서는 reply 내부에 input element가 클릭되어 focus되었고, 이로 인해 해당 css가 발동했다.*/
+
+.reply:focus-within {
+  transform: translateY(80px);
 }
